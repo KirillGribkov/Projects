@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title%}
+Рабочая зона
+{% endblock %}
+{% block content%}
+  <h1>Рабочая зона</h1>
+        <form action="{% url 'main:profile' %}" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-success" type="submit">Начать генерацию</button>
+                <h2>Вывод</h2>
+                <div class ="alert alert-warning mt-2">
+                    <h3>{{ Text }}</h3>
+                </div>
+        </form>
+{% endblock %}
+
